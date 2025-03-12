@@ -9,7 +9,7 @@
   height: 600px; /* Altura del Hero */
   margin: auto; /* Centramos el componente y alejamos 80px de los bordes */
   padding: 0 80px; /* Espaciado interior para escritorio */
-  background-image: url("image-hero.jpg"); /* Imagen de fondo */
+  background-image: url("/public/image-hero.jpg"); /* Imagen de fondo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
