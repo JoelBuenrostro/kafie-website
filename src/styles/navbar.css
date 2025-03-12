@@ -1,0 +1,70 @@
+/* Configuración de la barra de navegación */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr auto; /* Dos columnas: logo a la izquierda y enlaces a la derecha */
+  align-items: center;
+  height: 110px; /* Altura de la barra de navegación */
+  max-width: 1440px; /* Ancho máximo */
+  margin: 0 auto; /* Centrar en la página */
+  padding: 0; /* Sin padding adicional */
+  position: relative; /* Necesario para el posicionamiento de elementos */
+}
+
+/* Estilo del logo */
+.navbar__logo {
+  position: absolute;
+  top: 44px; /* Espaciado desde la parte superior */
+  left: 81px; /* Espaciado desde el borde izquierdo */
+}
+
+.navbar__logo img {
+  width: 200px; /* Ancho del logo */
+  height: 60px; /* Alto del logo */
+}
+
+/* Estilo de los enlaces */
+.navbar__links {
+  display: flex;
+  gap: 50px; /* Espaciado entre los enlaces */
+  list-style: none; /* Elimina los puntos de lista */
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50px; /* Espaciado desde la parte superior */
+  right: 80px; /* Espaciado desde el borde derecho */
+}
+
+.navbar__links li a {
+  font-family: var(--font-barlow); /* Usa la tipografía Barlow */
+  font-size: 16px; /* Tamaño de fuente */
+  color: #83888f; /* Color del texto */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease; /* Animación al pasar el mouse */
+}
+
+.navbar__links li a:hover {
+  color: var(--dark-cyan); /* Cambia el color al pasar el mouse */
+}
+
+/* Responsividad: ajusta el espaciado para dispositivos móviles */
+@media (max-width: 768px) {
+  .navbar {
+    grid-template-columns: 1fr; /* Cambia a una sola columna */
+    height: auto; /* Ajusta la altura */
+  }
+
+  .navbar__logo {
+    top: 20px;
+    left: 20px;
+  }
+
+  .navbar__links {
+    position: static; /* Elimina el posicionamiento absoluto */
+    margin-top: 20px;
+    justify-content: center; /* Centra los enlaces */
+  }
+
+  .navbar__links li a {
+    font-size: 14px; /* Reduce el tamaño del texto */
+  }
+}

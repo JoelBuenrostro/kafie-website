@@ -1,0 +1,51 @@
+---
+import "../styles/global.css";
+import Navbar from "../components/Navbar.astro";
+import Hero from "../components/Hero.astro";
+import CoffeeVarieties from "../components/CoffeeVarieties.astro";
+import InformativeSection from "../components/InformativeSection.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Kafie ofrece café de especialidad cultivado y tostado por productores locales. Conoce más sobre nuestras prácticas éticas y sostenibles."
+    />
+    <meta property="og:title" content="Kafie - Café de Especialidad" />
+    <meta
+      property="og:description"
+      content="Descubre café local tostado artesanalmente con prácticas sostenibles."
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kafie - Café de Especialidad" />
+    <meta
+      name="twitter:description"
+      content="Descubre el mejor café local tostado artesanalmente."
+    />
+    <meta name="twitter:image" content="" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/Favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,900;1,900&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Kafie</title>
+  </head>
+  <body>
+    <Navbar />
+    <main>
+      <Hero />
+      <CoffeeVarieties />
+      <InformativeSection />
+    </main>
+    <Footer />
+  </body>
+</html>

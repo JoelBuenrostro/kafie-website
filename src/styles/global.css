@@ -1,0 +1,109 @@
+/* -------------------------------
+   Paleta de Colores
+-------------------------------- */
+:root {
+  --dark-cyan: #0E8784;
+  --dark-grey-blue: #333D4B;
+  --pale-orange: #FDD6BA;
+  --background: #FEFCF7;
+  --grey: #83888F;
+
+  /* Tipografía */
+  --font-fraunces: 'Fraunces', serif;
+  --font-barlow: 'Barlow', sans-serif;
+
+  /* Tamaños de tipografía */
+  --body-size: 16px;
+  --line-body: 26px;
+
+  /* Espaciado */
+  --spacing-base: 1rem;
+  --container-padding: 20px;
+
+  /* Grid */
+  --grid-columns: 12;
+  --grid-column-width: 65px;
+  --grid-row-height: 60px;
+  --grid-gap: 20px;
+}
+
+/* -------------------------------
+   Reset y Configuración Global
+-------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px; /* Base rem unit */
+}
+
+body {
+  font-family: var(--font-barlow);
+  font-size: var(--body-size);
+  line-height: var(--line-body);
+  color: var(--dark-grey-blue);
+  background-color: var(--background);
+  margin: 0;
+  padding: 0;
+}
+
+/* -------------------------------
+   Contenedor Principal (Grid)
+-------------------------------- */
+.container {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns), var(--grid-column-width));
+  grid-auto-rows: var(--grid-row-height);
+  gap: var(--grid-gap);
+  justify-content: center;
+  padding: var(--container-padding);
+}
+
+/* Estilo para los elementos de prueba */
+.container div {
+  background-color: var(--pale-orange);
+  border: 1px dashed rgba(0, 0, 0, 0.2); /* Bordes visibles para desarrollo */
+  text-align: center;
+  line-height: var(--grid-row-height); /* Centra texto verticalmente */
+  border-radius: 5px;
+}
+
+/* -------------------------------
+   Puntos de Quiebre Responsivos
+-------------------------------- */
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr); /* 4 columnas ajustables */
+    gap: 15px; /* Menor espaciado en móviles */
+  }
+}
+
+/* Pantallas medianas (tabletas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    grid-template-columns: repeat(8, 1fr); /* 8 columnas ajustables */
+    gap: 20px; /* Espaciado estándar */
+  }
+}
+
+/* Pantallas grandes (escritorios) */
+@media (min-width: 1025px) {
+  .container {
+    grid-template-columns: repeat(var(--grid-columns), var(--grid-column-width));
+    gap: var(--grid-gap);
+  }
+}
+
+/* -------------------------------
+   Visualización para Desarrollo
+-------------------------------- */
+.container div {
+  font-family: var(--font-fraunces);
+  font-size: 1rem;
+  color: var(--dark-grey-blue);
+}

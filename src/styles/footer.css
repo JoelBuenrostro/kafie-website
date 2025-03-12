@@ -1,0 +1,68 @@
+/* -------------------------------
+   Configuración del Pie de Página
+-------------------------------- */
+.footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* Logo, enlaces y redes sociales */
+  align-items: center; /* Alinea verticalmente */
+  width: 1280px; /* Ancho del pie de página */
+  height: 120px; /* Altura del pie de página */
+  margin: 0 auto; /* Centra el componente */
+  background-color: #2c343e; /* Color de fondo */
+  padding: 0 85px; /* Espaciado interno */
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+/* -------------------------------
+   Logo
+-------------------------------- */
+.footer__logo {
+  position: relative;
+}
+
+.footer__logo img {
+  display: block;
+  width: 200px; /* Ancho del logo */
+  height: 60px; /* Alto del logo */
+}
+
+/* -------------------------------
+   Enlaces de Navegación
+-------------------------------- */
+.footer__nav ul {
+  display: flex;
+  gap: 32px; /* Espaciado entre los enlaces */
+  list-style: none; /* Elimina los puntos de lista */
+  margin: 24px;
+  padding: 0;
+}
+
+.footer__nav ul li a {
+  font-family: var(--font-barlow); /* Tipografía Barlow */
+  font-size: 16px;
+  color: #ffffff; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+  transition: color 0.3s ease;
+}
+
+.footer__nav ul li a:hover {
+  color: #fdd6ba; /* Color al pasar el mouse */
+}
+
+/* -------------------------------
+   Redes Sociales
+-------------------------------- */
+.footer__social {
+  display: flex;
+  gap: 24px; /* Espaciado entre los iconos */
+}
+
+.footer__social a img {
+  width: 24px; /* Tamaño estándar de los iconos */
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.footer__social a:hover img {
+  transform: scale(1.1); /* Pequeño zoom al pasar el mouse */
+}

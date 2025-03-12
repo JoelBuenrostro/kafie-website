@@ -1,0 +1,140 @@
+/* -------------------------------
+   Configuración General
+-------------------------------- */
+.informative-section {
+  position: relative;
+  width: 1280px; /* Ancho del componente */
+  height: 577px; /* Altura del componente */
+  margin: 100px auto; /* Centrado en la página */
+  margin-bottom: 200px;
+  padding: 0; /* Sin espaciado interno */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  box-sizing: border-box;
+}
+
+/* Fondo del componente */
+.informative-section__background {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1280px;
+  height: 577px;
+  background-color: #2c343e; /* Color de fondo */
+  z-index: 0; /* Aparece detrás de los demás elementos */
+  border-radius: 10px; /* Opcional: bordes redondeados */
+}
+
+/* -------------------------------
+   Cuadro de Texto Principal
+-------------------------------- */
+.informative-section__text {
+  position: relative;
+  width: 540px;
+  height: 160px;
+  text-align: center;
+  margin-top: 100px; /* Separación del borde superior */
+  z-index: 1; /* Aparece delante del fondo */
+}
+
+.informative-section__title {
+  font-family: var(--font-fraunces);
+  font-size: 36px;
+  color: #ffffff; /* Texto blanco */
+  margin-bottom: 32px;
+}
+
+.informative-section__description {
+  font-family: var(--font-barlow);
+  font-size: 16px;
+  line-height: 26px;
+  color: #fefcf7; /* Texto ligeramente más claro */
+}
+
+/* -------------------------------
+   Tarjetas Informativas
+-------------------------------- */
+.informative-section__cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Tres tarjetas en una fila */
+  gap: 30px; /* Separación entre tarjetas */
+  margin-top: 86px; /* 346px (borde superior) - 100px (texto) - 160px (cuadro de texto) */
+  z-index: 1; /* Aparece delante del fondo */
+}
+
+.informative-card {
+  width: 350px;
+  height: 382px;
+  background-color: #0e8784; /* Fondo de la tarjeta */
+  color: #fefcf7; /* Texto blanco */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.informative-card__icon {
+  width: 72px;
+  height: 72px;
+  margin-top: 72px;
+  margin-bottom: 56px;
+}
+
+.informative-card__title {
+  font-family: var(--font-fraunces);
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+
+.informative-card__description {
+  font-family: var(--font-barlow);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* -------------------------------
+   Responsividad
+-------------------------------- */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .informative-section {
+    width: 100%;
+    height: auto; /* Altura dinámica */
+    padding: 0 40px;
+  }
+
+  .informative-section__background {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .informative-section__cards {
+    grid-template-columns: 1fr 1fr; /* Dos tarjetas por fila */
+    gap: 20px;
+  }
+}
+
+/* Móviles (menos de 768px) */
+@media (max-width: 768px) {
+  .informative-section {
+    padding: 0 24px;
+  }
+
+  .informative-section__cards {
+    grid-template-columns: 1fr; /* Una tarjeta por fila */
+    gap: 20px;
+  }
+
+  .informative-card {
+    width: 100%; /* Ancho completo */
+  }
+}

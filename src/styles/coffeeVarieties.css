@@ -1,0 +1,127 @@
+/* -------------------------------
+   Contenedor Principal
+-------------------------------- */
+.coffee-varieties {
+  position: relative;
+  width: 1111px; /* Ancho del componente */
+  height: 525px; /* Altura del componente */
+  margin: 136px auto 0; /* Centrado en la página con separación respecto al Hero */
+  padding: 0 165px; /* Espaciado interno para escritorio */
+  display: flex; /* Cambiamos a flexbox para alinear contenido interno */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Centra el contenido verticalmente */
+}
+
+/* -------------------------------
+   Texto de Fondo
+-------------------------------- */
+.coffee-varieties__background-text {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-fraunces);
+  font-size: 116px;
+  line-height: 1;
+  color: rgba(51, 61, 75, 0.1); /* Texto difuminado */
+  z-index: 0;
+  white-space: nowrap;
+  pointer-events: none; /* Evita interacción con el texto */
+}
+
+/* -------------------------------
+   Grid de Café
+-------------------------------- */
+.coffee-varieties__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Cuatro columnas iguales */
+  gap: 40px; /* Espaciado entre las columnas */
+  justify-content: center; /* Centra el grid horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-top: 124px; /* Espaciado adicional para separación */
+  z-index: 1; /* Asegura que se muestre encima del texto de fondo */
+}
+
+/* -------------------------------
+   Elementos de Café
+-------------------------------- */
+.coffee-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos dentro de cada celda */
+  gap: 20px; /* Espaciado entre imagen y descripción */
+}
+
+.coffee-item__image {
+  width: 256px;
+  height: 193px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade una ligera sombra */
+}
+
+.coffee-item__info {
+  width: 255px; /* Ancho del bloque de descripción */
+  height: 134px;
+  background-color: #ffffff; /* Fondo blanco */
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Añade una ligera sombra */
+  border-radius: 10px;
+}
+
+.coffee-item__title {
+  font-family: var(--font-fraunces);
+  font-size: 20px;
+  color: #333D4B;
+  margin-bottom: 8px;
+}
+
+.coffee-item__description {
+  font-family: var(--font-barlow);
+  font-size: 16px;
+  line-height: 24px;
+  color: #333D4B;
+}
+
+/* -------------------------------
+   Responsividad
+-------------------------------- */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .coffee-varieties {
+    padding: 0 40px;
+    height: auto; /* Ajusta altura dinámica */
+  }
+
+  .coffee-varieties__grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tabletas */
+    gap: 30px;
+  }
+
+  .coffee-varieties__background-text {
+    font-size: 90px;
+  }
+}
+
+/* Móviles (menos de 768px) */
+@media (max-width: 768px) {
+  .coffee-varieties {
+    padding: 0 24px;
+  }
+
+  .coffee-varieties__grid {
+    grid-template-columns: 1fr; /* Una columna en móviles */
+    gap: 20px;
+  }
+
+  .coffee-varieties__background-text {
+    font-size: 60px;
+  }
+
+  .coffee-item__image {
+    width: 100%; /* Ancho completo */
+    height: auto; /* Altura proporcional */
+  }
+}

@@ -1,0 +1,130 @@
+/* -------------------------------
+   Configuración del Hero
+-------------------------------- */
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 1280px; /* Ancho del Hero */
+  height: 600px; /* Altura del Hero */
+  margin: auto; /* Centramos el componente y alejamos 80px de los bordes */
+  padding: 0 80px; /* Espaciado interior para escritorio */
+  background-image: url("image-hero.jpg"); /* Imagen de fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  overflow: hidden; /* Oculta contenido que salga del Hero */
+}
+
+/* -------------------------------
+   Contenido del Hero
+-------------------------------- */
+.hero__content {
+  display: grid;
+  gap: 20px; /* Espaciado entre el título, texto y botón */
+  justify-self: start; /* Alinea el contenido a la izquierda */
+  align-self: center; /* Centra verticalmente el contenido */
+  color: var(--background); /* Color del texto */
+  max-width: 600px; /* Limita el ancho del contenido */
+}
+
+/* Título */
+.hero__title {
+  font-family: var(--font-fraunces);
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 900;
+  color: #fefcf7; /* Texto blanco */
+  margin-bottom: 12px;
+}
+
+/* Texto descriptivo */
+.hero__text {
+  font-family: var(--font-barlow);
+  font-size: 16px;
+  line-height: 26px;
+  color: #fefcf7; /* Texto blanco */
+  margin-bottom: 56px;
+}
+
+/* Botón */
+.hero__button {
+  font-family: var(--font-barlow);
+  width: 217px;
+  height: 56px;
+  background-color: #0e8784;
+  color: #fefcf7;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  left: 85px;
+  bottom: 116px;
+  transition: background-color 0.3s ease;
+}
+
+.hero__button a {
+  font-family: var(--font-barlow);
+  font-size: 16px;
+  font-weight: bold;
+  color: #fefcf7; /* Texto blanco */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.hero__button:hover {
+  background-color: #fdd6ba; /* Cambia de color al pasar el mouse */
+  color: var(--dark-grey-blue); /* Texto oscuro */
+}
+
+/* -------------------------------
+   Responsividad
+-------------------------------- */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+  .hero {
+    width: auto; /* Ancho dinámico */
+    padding: 0 40px; /* Espaciado interno reducido */
+    height: 500px; /* Altura menor */
+  }
+
+  .hero__title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .hero__text {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .hero__button {
+    left: 40px; /* Ajusta la posición del botón */
+    bottom: 96px;
+  }
+}
+
+/* Móviles (menos de 768px) */
+@media (max-width: 768px) {
+  .hero {
+    width: auto; /* Ancho dinámico */
+    padding: 0 24px; /* Espaciado interno reducido */
+    height: 400px; /* Altura menor */
+  }
+
+  .hero__title {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .hero__text {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .hero__button {
+    left: 24px; /* Ajusta la posición del botón */
+    bottom: 80px;
+  }
+}
