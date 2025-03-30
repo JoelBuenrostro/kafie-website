@@ -1,0 +1,36 @@
+.about-hero {
+  width: 100%;
+  max-width: 1280px;
+  height: 450px;
+  margin-inline: auto;
+  background-image: url("/image-about.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+  margin-top: 40px;
+}
+
+.about-hero__overlay {
+  height: 100%;
+  width: 100%;
+  padding: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fefcf7;
+  font-family: var(--font-fraunces);
+  border-radius: 10px;
+}
+
+.about-hero h1 {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.about-hero p {
+  font-size: 16px;
+  font-family: var(--font-barlow);
+  max-width: 540px;
+  line-height: 1.6;
+}
