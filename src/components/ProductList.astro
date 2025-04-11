@@ -1,0 +1,77 @@
+---
+import { fetchFromAPI } from "../lib/api.js";
+import "../styles/productList.css";
+
+type Product = {
+  _id: string;
+  name: string;
+  price: number;
+  image?: string;
+};
+
+let products: Product[] = [];
+
+try {
+  products = await fetchFromAPI("/api/products");
+} catch (err) {
+  const error = err instanceof Error ? err : new Error(String(err));
+  console.error("❌ Error al cargar productos:", error.message);
+}
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Kafie ofrece café de especialidad cultivado y tostado por productores locales. Conoce más sobre nuestras prácticas éticas y sostenibles."
+    />
+    <meta property="og:title" content="Kafie - Café de Especialidad" />
+    <meta
+      property="og:description"
+      content="Descubre café local tostado artesanalmente con prácticas sostenibles."
+    />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Kafie - Café de Especialidad" />
+    <meta
+      name="twitter:description"
+      content="Descubre el mejor café local tostado artesanalmente."
+    />
+    <meta name="twitter:image" content="" />
+    <meta name="robots" content="index, follow" />
+    <link rel="icon" type="image/svg+xml" href="/Favicon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,900;1,900&family=Barlow:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <section class="product-list">
+    <h2>Nuestros cafés</h2>
+
+    {
+      products.length === 0 ? (
+        <p>No hay productos disponibles.</p>
+      ) : (
+        <ul class="product-grid">
+          {products.map((product: Product) => (
+            <li class="product-card">
+              <img
+                src={product.image || "/images/placeholder.jpg"}
+                alt={product.name}
+              />
+              <h3>{product.name}</h3>
+              <p>${product.price} MXN</p>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </section>
+
+
+</html>

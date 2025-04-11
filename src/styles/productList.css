@@ -1,0 +1,30 @@
+.product-list {
+  max-width: 1280px;
+  margin: 80px auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+  margin-top: 32px;
+  list-style: none;
+  padding: 0;
+}
+
+.product-card {
+  background: #fefcf7;
+  border-radius: 10px;
+  padding: 16px;
+  text-align: center;
+  font-family: var(--font-barlow);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  height: 180px;
+}
